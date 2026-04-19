@@ -42,6 +42,10 @@ export default function CampaignCard({ campaign }) {
         <HiOutlineSparkles style={{ marginTop: 2, flexShrink: 0, color: 'var(--text-tertiary)' }} />
         <span>{campaignData.explanation}</span>
       </div>
+
+      <div style={{ marginTop: '12px', fontSize: '12px', color: 'var(--text-secondary)', display: 'flex', alignItems: 'center', gap: '6px' }}>
+        <strong>⏰ Best time:</strong> {campaignData.bestTime}
+      </div>
     </div>
   );
 }
