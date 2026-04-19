@@ -21,20 +21,13 @@ export default function CampaignCard({ campaign }) {
       
       <div className="action-desc">{campaignData.recommendation}</div>
 
-      <div className="action-metrics">
-        <div className="metric-group">
-          <span className="metric-lbl">Target Users</span>
-          <span className="metric-val">{targetUsers}</span>
+      <div style={{ background: 'rgba(16, 185, 129, 0.05)', border: '1px solid rgba(16, 185, 129, 0.2)', padding: '16px', borderRadius: 'var(--radius-md)', marginBottom: '16px' }}>
+        <div style={{ fontSize: '20px', fontWeight: '700', color: 'var(--accent-success)', marginBottom: '8px' }}>
+          💰 Estimated Revenue: ₹{revenue.expectedRevenue.toLocaleString('en-IN')}
         </div>
-        <div className="metric-group">
-          <span className="metric-lbl">Est. Conversion</span>
-          <span className="metric-val">{revenue.conversionRate}</span>
-        </div>
-        <div className="metric-group" style={{ marginLeft: 'auto', textAlign: 'right' }}>
-          <span className="metric-lbl">Predicted Revenue</span>
-          <span className="metric-val" style={{ color: 'var(--accent-success)' }}>
-            ₹{revenue.expectedRevenue.toLocaleString('en-IN')}
-          </span>
+        <div style={{ display: 'flex', gap: '16px', color: 'var(--text-secondary)', fontSize: '13px' }}>
+          <div>👥 Target Users: {targetUsers}</div>
+          <div>📈 Conversion: {revenue.conversionRate}</div>
         </div>
       </div>
 

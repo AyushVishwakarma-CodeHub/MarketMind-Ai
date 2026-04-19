@@ -65,6 +65,22 @@ export default function Dashboard() {
         </div>
       </div>
 
+      {!loading && hasData && (
+        <div style={{ background: 'rgba(16, 185, 129, 0.1)', border: '1px solid rgba(16, 185, 129, 0.3)', padding: '24px', borderRadius: 'var(--radius-xl)', marginBottom: '32px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <div>
+            <div style={{ color: 'var(--text-secondary)', fontSize: '14px', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: '600', marginBottom: '4px' }}>Total Revenue Opportunity</div>
+            <div style={{ color: 'var(--accent-success)', fontSize: '42px', fontWeight: '700', letterSpacing: '-0.02em' }}>
+              ₹{totalRevenue.toLocaleString('en-IN')}
+            </div>
+            <div style={{ color: 'var(--text-tertiary)', fontSize: '13px', marginTop: '4px' }}>Sum of all projected campaign returns</div>
+          </div>
+          <div style={{ textAlign: 'right' }}>
+             <div style={{ color: 'var(--text-primary)', fontSize: '20px', fontWeight: '600' }}>{totalUsers.toLocaleString()} Users</div>
+             <div style={{ color: 'var(--text-secondary)', fontSize: '13px' }}>Targeted across {campaignData?.campaigns?.length || 0} smart campaigns</div>
+          </div>
+        </div>
+      )}
+
       <FileUpload onUploadSuccess={handleUploadSuccess} />
 
       {!hasData && !loading ? (

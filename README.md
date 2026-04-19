@@ -36,6 +36,8 @@ They end up spending on generic marketing that yields poor ROI.
 
 Most dashboards simply show *past* data. **MarketMind AI** is designed as a **smart marketing decision engine that predicts outcomes, not just suggests actions.** Instead of just giving businesses a list of customers, it answers the question: *"What should I do right now to make money?"*
 
+**Built for Indian SMBs:** Designed with the specific needs of local Indian businesses in mind, featuring ₹ (INR) currency forecasting and behavior patterns mapped to typical Indian business verticals (Food, Gyms, Apparels).
+
 ## 💰 Revenue-Driven Marketing Decisions
 
 Every generated campaign isn't just a basic tip; it's a calculated business move. For each campaign, the platform instantly displays:
