@@ -5,7 +5,7 @@
 ![Tech Stack](https://img.shields.io/badge/Stack-MERN-green?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
 
-**🚀 Live Demo:** [https://market-mind-ai-black.vercel.app](https://market-mind-ai-black.vercel.app)
+**🚀 Live Link:** [https://market-mind-ai-black.vercel.app](https://market-mind-ai-black.vercel.app)
 
 ---
 
