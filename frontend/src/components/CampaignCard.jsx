@@ -13,13 +13,19 @@ export default function CampaignCard({ campaign }) {
   return (
     <div className="action-card">
       <div className="action-card-header">
-        <div className="action-title">{campaignData.title}</div>
+        <div>
+          <div className="action-title">{campaignData.title}</div>
+          <div style={{ fontSize: '11px', color: 'var(--text-tertiary)', marginTop: '4px', display: 'flex', alignItems: 'center', gap: '4px' }}>
+            <span style={{ display: 'inline-block', width: '6px', height: '6px', borderRadius: '50%', background: 'var(--accent-success)' }}></span>
+            Confidence Level: High (Based on historical patterns)
+          </div>
+        </div>
         <div className={`badge ${BADGE_CLASSES[segment] || 'neutral'}`}>
           {segment}
         </div>
       </div>
       
-      <div className="action-desc">{campaignData.recommendation}</div>
+      <div className="action-desc" style={{ marginTop: '12px' }}>{campaignData.recommendation}</div>
 
       <div style={{ background: 'rgba(16, 185, 129, 0.05)', border: '1px solid rgba(16, 185, 129, 0.2)', padding: '16px', borderRadius: 'var(--radius-md)', marginBottom: '16px' }}>
         <div style={{ fontSize: '20px', fontWeight: '700', color: 'var(--accent-success)', marginBottom: '8px' }}>

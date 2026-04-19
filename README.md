@@ -53,6 +53,16 @@ Small business owners don't have time to be data scientists. They need immediate
 - **Time Formatting:** Actionable execution advice indicating the exact **Best Time** to run the campaign (e.g., *"Food → 6–9 PM"*).
 - **Zero-Config Onboarding:** Drag in a spreadsheet, instantly see money-making opportunities.
 
+## 🚀 Demo Flow
+
+To evaluate this application from start to finish, experience the exact flow a business owner would:
+
+1. **Initial Pitch:** The user lands on a pitch-deck onboarding screen that outlines the exact problem ("Marketing is guesswork without predictable ROI") and introduces the solution.
+2. **Data Upload:** The user drags and drops a raw CSV of customer data into the Upload Box. 
+3. **Smart Serialization:** The AI engine silently runs offline, categorizing raw rows into distinct business segments.
+4. **The "Aha" Moment:** The dashboard re-renders instantly to show the **Total Revenue Opportunity** banner.
+5. **Decision Execution:** The user views the campaign cards, assesses the confidence levels and AI explanations, and reads precisely what time to send the campaign to maximize financial return.
+
 ---
 
 ## ✨ Features

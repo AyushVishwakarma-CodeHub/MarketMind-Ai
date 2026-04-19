@@ -58,11 +58,13 @@ export default function Dashboard() {
 
   return (
     <div className="dashboard">
-      <div id="overview" className="dashboard-header" style={{ paddingTop: '20px' }}>
-        <div>
-          <h1>Dashboard</h1>
-          <p>Overview of your customer segments and campaign metrics.</p>
-        </div>
+      <div id="overview" className="dashboard-header" style={{ paddingTop: '20px', flexDirection: 'column', alignItems: 'flex-start' }}>
+        <h1 style={{ fontSize: '28px', color: 'var(--text-primary)', marginBottom: '8px', letterSpacing: '-0.02em', fontWeight: '700' }}>
+          AI-powered marketing engine that predicts revenue before running campaigns
+        </h1>
+        <p style={{ fontSize: '16px', color: 'var(--text-secondary)' }}>
+          Helping businesses make smarter decisions using customer data and automation.
+        </p>
       </div>
 
       {!loading && hasData && (
@@ -81,13 +83,65 @@ export default function Dashboard() {
         </div>
       )}
 
-      <FileUpload onUploadSuccess={handleUploadSuccess} />
+      {hasData && !loading && (
+        <FileUpload onUploadSuccess={handleUploadSuccess} />
+      )}
 
       {!hasData && !loading ? (
-        <div className="empty-state">
-          <HiOutlineExclamationCircle size={48} />
-          <h3>No records found</h3>
-          <p>Please upload a CSV file to generate your dashboard.</p>
+        <div className="onboarding-pitch" style={{ display: 'flex', flexDirection: 'column', gap: '32px', marginTop: '20px' }}>
+          
+          <div className="pitch-section" style={{ display: 'flex', gap: '24px', background: 'var(--bg-card)', padding: '32px', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-subtle)' }}>
+            <div style={{ flex: 1 }}>
+              <div style={{ color: 'var(--accent-danger)', fontWeight: '600', marginBottom: '8px', textTransform: 'uppercase', fontSize: '13px' }}>The Problem</div>
+              <ul style={{ listStyle: 'none', color: 'var(--text-secondary)', fontSize: '14px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                <li>❌ Businesses don't know which customers to target</li>
+                <li>❌ Marketing is mostly guesswork without predictable ROI</li>
+              </ul>
+            </div>
+            <div style={{ width: '1px', background: 'var(--border-subtle)' }}></div>
+            <div style={{ flex: 1 }}>
+              <div style={{ color: 'var(--accent-success)', fontWeight: '600', marginBottom: '8px', textTransform: 'uppercase', fontSize: '13px' }}>The Solution</div>
+              <ul style={{ listStyle: 'none', color: 'var(--text-secondary)', fontSize: '14px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                <li>✅ MarketMind AI intelligently segments users</li>
+                <li>✅ Suggests automated, high-conversion campaigns</li>
+                <li>✅ Predicts exact revenue before you spend a dime</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="pitch-section">
+            <h3 style={{ fontSize: '16px', fontWeight: '600', marginBottom: '16px' }}>How it Works</h3>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px' }}>
+              <div style={{ background: 'var(--bg-element)', padding: '20px', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-subtle)' }}>
+                <div style={{ fontSize: '24px', marginBottom: '12px' }}>📁</div>
+                <div style={{ fontWeight: '600', fontSize: '14px', marginBottom: '4px' }}>1. Upload Data</div>
+                <div style={{ fontSize: '12px', color: 'var(--text-tertiary)' }}>Drag and drop your raw customer CSV.</div>
+              </div>
+              <div style={{ background: 'var(--bg-element)', padding: '20px', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-subtle)' }}>
+                <div style={{ fontSize: '24px', marginBottom: '12px' }}>🧠</div>
+                <div style={{ fontWeight: '600', fontSize: '14px', marginBottom: '4px' }}>2. AI Segments Users</div>
+                <div style={{ fontSize: '12px', color: 'var(--text-tertiary)' }}>Auto-categorized into High Value, Churn Risk, etc.</div>
+              </div>
+              <div style={{ background: 'var(--bg-element)', padding: '20px', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-subtle)' }}>
+                <div style={{ fontSize: '24px', marginBottom: '12px' }}>🎯</div>
+                <div style={{ fontWeight: '600', fontSize: '14px', marginBottom: '4px' }}>3. Generate Campaigns</div>
+                <div style={{ fontSize: '12px', color: 'var(--text-tertiary)' }}>Context-aware marketing actions assigned.</div>
+              </div>
+              <div style={{ background: 'var(--bg-element)', padding: '20px', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-subtle)' }}>
+                <div style={{ fontSize: '24px', marginBottom: '12px' }}>💰</div>
+                <div style={{ fontWeight: '600', fontSize: '14px', marginBottom: '4px' }}>4. Predict Revenue</div>
+                <div style={{ fontSize: '12px', color: 'var(--text-tertiary)' }}>See exact financial outcomes instantly.</div>
+              </div>
+            </div>
+          </div>
+
+          <div className="pitch-section" style={{ background: 'rgba(59, 130, 246, 0.05)', padding: '32px', borderRadius: 'var(--radius-lg)', border: '1px solid rgba(59, 130, 246, 0.2)', textAlign: 'center' }}>
+            <h2 style={{ fontSize: '20px', fontWeight: '600', color: 'var(--text-primary)', marginBottom: '16px' }}>Ready to see it in action?</h2>
+            <div style={{ maxWidth: '500px', margin: '0 auto' }}>
+              <FileUpload onUploadSuccess={handleUploadSuccess} />
+            </div>
+          </div>
+
         </div>
       ) : (
         <>
