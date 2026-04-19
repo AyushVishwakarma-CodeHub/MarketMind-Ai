@@ -1,0 +1,18 @@
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Environment
+.env
+.env.local
+
+# Large datasets and temporary files
+large_dataset_*.csv
+temp/
+*.log
+
+# Editor/OS
+.DS_Store
+.vscode/
+.idea/
